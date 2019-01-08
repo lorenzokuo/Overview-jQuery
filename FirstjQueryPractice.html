@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>My jQuery basic assignment!</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<style type="text/css">
+		body {
+			margin: 0px;
+			padding: 0px;
+			/*outline: 1px solid pink;*/
+			text-decoration: none;
+		}
+		.content {
+			width: 100%;
+			display: inline-block;
+			border-bottom: 5px solid black;
+		}
+			.content .left {
+				width: 25%;
+				display: inline-block;
+				text-align: center;
+			}
+			.content .right {
+				width: 70%;
+				display: inline-block;
+			}
+				.content .left a {
+					padding: 10px;
+					width: 150px;
+					height: 30px;
+					display: inline-block;
+					background-color: orange;
+					text-decoration: none;
+				}
+				.content .right h1 {
+					padding: 10px;
+					width: 500px;
+					height: 40px;
+					/*background-color: grey;*/
+
+				}
+				.content .right p {
+					padding: 10px;
+					height: 40px;
+					/*background-color: grey;*/
+					text-align: left;
+				}
+
+				img {
+					width: 100px;
+					height: 100px;
+					position: absolute;
+					top: 185px;
+					left: 50px;
+					display: none;
+				}
+				.red{
+					color: red;
+				}
+
+	</style>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+	<script>
+	   $(document).ready(function() {
+	   	console.log('ready!')
+	       // your jquery codes here
+
+	       $('.btn-st, .st').text('Slidetoggle');
+	       $('.btn-app, .app').text('Append');
+	       $('.stp').text('Click the button to slidetoggle a hidden image');
+	       $('.appp').text('Click the button to append a new paragraph');
+
+	       $('.btn-ac').click(function(){ 
+	       	console.log('clicked!!!!!!')
+	       	$('.acp').addClass('red');
+	       });
+
+	       $('.btn-st').click(function(){ 
+	       	console.log('toggle!!!!!!')
+	       	$('img').slideToggle(); 	       	
+	       });
+
+	       $('.btn-app').click(function(){ 
+	       	console.log('apped!!!!!!')
+	       	$('.appp').append('This is a new paragraph.'); 	       	
+	       });
+
+
+
+	   });
+	</script>	
+
+</head>
+<body>
+	<div class="container">
+		<div class="content">
+			<div class="left">
+				<a class="btn-ac" href="#">AddClass</a>
+			</div>
+			<div class="right">
+				<h1 class="ac">AddClass</h1>
+				<p class="acp">Click the button to add class 'red' to this paragraph</p>
+			</div>
+		</div>
+		<div class="content">
+			<div class="left">
+				<a class="btn-st" href="#">Title</a>
+				<img src="coding dojo.jpg">
+			</div>
+			<div class="right">
+				<h1 class="st">Title</h1>
+				<p class="stp">Click the button to add class 'red' to this paragraph</p>
+			</div>
+		</div>
+		<div class="content">
+			<div class="left">
+				<a class="btn-app" href="#">Title</a>
+			</div>
+			<div class="right">
+				<h1 class="app">Title</h1>
+				<p class="appp">Click the button to add class 'red' to this paragraph</p>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
